@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+        <p>
+        {% for city in topcities %} 
+        <li>{{city.city_name}}</li> 
+        {% endfor %}
+        </p>
+        <form action="/" method="POST" >
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.city_name.label }} <br>
+                {{ form.city_name(size=32) }}
+            </p>
+            <p>
+                {{ form.city_rank.label }} <br>
+                {{ form.city_rank(size=32) }}
+            </p>
+            <p>{{ form.is_visited.label }} {{ form.is_visited() }}</p>
+            <p>
+                {{ form.submit() }}
+            </p>
+        </form>
+    </body>
+</html>
