@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title></title>
-    </head>
+    
 
     <body>
         {% with messages = get_flashed_messages() %}
@@ -16,11 +14,7 @@
         {% endwith %}
         {% block content %}
         {% endblock %}
-        <p>
-        {% for city in topcities %} 
-        <li>{{city.city_name}}</li> 
-        {% endfor %}
-        </p>
+        
         <form action="/" method="POST" >
             {{ form.hidden_tag() }}
             <p>

@@ -1,11 +1,8 @@
-from flask import request
-from myapp import myobj
-from myapp import db
+from myapp import db,myobj
 from sqlalchemy import asc
 from myapp.forms import TopCitiesForm
 from myapp.models import TopCities
-from flask_wtf import FlaskForm
-from flask import render_template, escape, flash, redirect
+from flask import render_template, escape, flash, redirect,request
 
 
 @myobj.route("/", methods=['GET', 'POST'])

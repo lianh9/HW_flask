@@ -1,8 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, SubmitField, IntegerField
 from wtforms.validators import DataRequired
-from wtforms import validators
-
 
 class TopCitiesForm(FlaskForm):
     city_name = StringField('City Name', validators=[DataRequired()])
